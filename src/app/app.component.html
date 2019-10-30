@@ -1,0 +1,11 @@
+<div *ngIf="!streamRetreived">Loading...</div>
+
+<div *ngIf="streamRetreived" class="container mt-4">
+
+  <!-- 3D representation panel -->
+  <app-engine [parts]="configuration.parts" [codes]=codes [type]=type></app-engine>
+
+  <!-- Configuration panel -->
+  <app-ui [configuration]=configuration (updateModel)="updateEngine($event)"></app-ui>
+
+</div>
